@@ -1,0 +1,29 @@
+@charset "utf-8";
+/* Global */
+:root {
+	/* Color */
+	--color-white: #fff;
+	--color-light-white: #eee;
+	--color-dark-white: #eee;
+	--color-grey: #616161;
+	--color-light-grey: #7c7979;
+	--color-dark-grey: #4d4d4d;
+	--color-black: #000;
+
+	/* Font size */
+	--font-large: 48px;
+	--font-medium: 28px;
+	--font-regular: 18px;
+	--font-small: 16px;
+
+	/* Font Weight */
+	--weight-bold: 700;
+	--weight-semi-bold: 600;
+	--weight-regular: 400;
+
+	/* Size */
+}
+/* Universa tags */
+* {
+	box-sizing: border-box;
+}

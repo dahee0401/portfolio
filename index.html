@@ -1,45 +1,271 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dahee's Portfolio</title>
-  <meta name="description" content="Portfolio for publisher dahee">
-  <meta name="author" content="jeong, dahee">
-  <link rel="icon" type = "image/png" href="images/favicon.png">
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;1,600&family=Source+Sans+Pro:wght@200&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./style.css">
-  <script src="main.js" defer></script>
-  <script src="https://kit.fontawesome.com/03cea40a8a.js" crossorigin="anonymous"></script>
-</head>
-<body>
-  <!-- Navbar -->
-  <nav id="navbar">
-    <div class="navbar__logo">
-      <i class="fab fa-diaspora"></i>
-      <a href="#">Dahee</a>
-    </div>
-    <div">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dahee's Portfolio</title>
+    <meta
+      name="description"
+      content="Portfolio Dahee"
+    />
+    <meta name="author" content="Dahee" />
+    <link rel="icon" type="image/png" href="images/favicon.png" />
+    <script
+      src="https://kit.fontawesome.com/9eb162ac0d.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav id="navbar">
+      <div class="navbar__logo">
+        <i class="fab fa-diaspora"></i>
+        <a href="#">Dahee</a>
+      </div>
       <ul class="navbar__menu">
-        <li class="navbar__menu__item">Home</li>
-        <li class="navbar__menu__item">About</li>
-        <li class="navbar__menu__item">Skills</li>
-        <li class="navbar__menu__item">My work</li>
-        <li class="navbar__menu__item">Testmonial</li>
-        <li class="navbar__menu__item">Contact</li>
+        <li class="navbar__menu__item active" data-link="#home">Home</li>
+        <li class="navbar__menu__item" data-link="#about">About</li>
+        <li class="navbar__menu__item" data-link="#skills">Skills</li>
+        <li class="navbar__menu__item" data-link="#work">My work</li>
+        <li class="navbar__menu__item" data-link="#testimonials">Testimonial</li>
+        <li class="navbar__menu__item" data-link="#contact">Contact</li>
       </ul>
+      <!-- Toggle button -->
+      <button class="navbar__toggle-btn">
+        <i class="fas fa-bars"></i>
+      </button>
+    </nav>
+
+    <!-- Home -->
+    <section id="home">
+      <div class="home__container">
+        <img src="images/profile.jpg" alt="profile" class="home__avatar"/> 
+        <h1 class="home__title">Hello, <br />I'm Publisher Jeong, dahee</h1>
+        <h2 class="home__description">
+         웹퍼블리셔 정다희입니다.
+        </h2>
+        <button class="home__contact">Contact Me</button>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section section__container">
+      <h1>About me</h1>
+      <p>
+       좋은 웹사이트를 만드는 것이 저의 목표입니다. 웹사이트를 접하며 다양한 디자인과 코드분석을 하며 끊임없이 공부를 하고 있습니다. 단순히 화려한 디자인이 아닌 고객의 니즈를 파악하여 최적의 사용자 경험을 제공하는 것을 목표로 최선을 다하며, 언제나 배움의 자세를 멈추지 않고 발전하도록 하겠습니다.
+      </p>
+      <div class="about__majors">
+        <div class="major">
+          <div class="major__icon">
+            <i class="fab fa-html5"></i>
+          </div>
+          <h2 class="major__title">Web Publishing</h2>
+          <div class="major__description"> HTML, CSS, JavaScript</div>
+        </div>
+        <div class="major">
+          <div class="major__icon">
+            <i class="fas fa-server"></i>
+          </div>
+          <h2 class="major__title">Web Design</h2>
+          <p class="major__description">
+            Photoshop, Illustrator, Xd & Figma
+          </p>
+        </div>
+      </div>
+      <div class="about__jobs">
+        <div class="job">
+          <img src="images/shinhan.png" alt="samsung" class="job__logo" />
+         <div class="job__description">
+          <p class="job__name"> Shinhan The Next Project </p>
+          <p class="job__period">2022 January - Jume</p>
+         </div>
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="section">
+      <div class="section__container">
+        <h1>Skills</h1>
+        <h2>Skills & Attributes</h2>
+        <p>
+          새로운 기술을 배우는 것을 좋아하며, 팀 환경에서 원할한 커뮤니케이션이 이루며 작업을 할 수 있습니다.
+        </p>
+        <div class="skillset">
+          <div class="skillset__left">
+            <h3 class="skillset__title">Skills</h3>
+            <div class="skill">
+              <div class="skill__description">
+                <span>HTML</span>
+                <span>90%</span>
+              </div>
+              <div class="skill__bar">
+                <div class="skill__value" style="width: 90%;"></div>
+              </div>
+            </div>
+            <div class="skill">
+              <div class="skill__description">
+                <span>CSS</span>
+                <span>85%</span>
+              </div>
+              <div class="skill__bar">
+                <div class="skill__value" style="width: 85%;"></div>
+              </div>
+            </div>
+            <div class="skill">
+              <div class="skill__description">
+                <span>JavaScript</span>
+                <span>65%</span>
+              </div>
+              <div class="skill__bar">
+                <div class="skill__value" style="width: 65%;"></div>
+              </div>
+            </div> 
+            <div class="skill">
+              <div class="skill__description">
+                <span>Picture Editing</span>
+                <span>85%</span>
+              </div>
+              <div class="skill__bar">
+                <div class="skill__value" style="width: 88%;"></div>
+              </div>
+            </div>
+            <div class="skill">
+              <div class="skill__description">
+                <span>Prototype</span>
+                <span>77%</span>
+              </div>
+              <div class="skill__bar">
+                <div class="skill__value" style="width: 77%;"></div>
+              </div>
+            </div>
+          </div>
+          <div class="skillset__right">
+            <div class="tools">
+              <h3 class="skillset__title">Tools</h3>
+              <ul class="tools__list">
+                <li><span>Visual Studio Code</span></li>
+                <li><span>Websquare</span></li>
+                <li><span>Photoshop</span></li>
+                <li><span>Illustrator</span></li>
+                <li><span>Xd & Figma</span></li>
+              </ul>
+            </div>
+            <div class="etc">
+              <h3 class="skillset__title">Etc</h3>
+              <ul class="etc__list">
+                <li><span>Git</span></li>
+                <li><span>Communication</span></li>
+                <li><span>Cooporation</span></li>
+              </ul>
+            </div>
+          </div>
+      </div>
+    </section>
+
+    <!-- Work -->
+    <section id="work" class="section">
+     <div class="section__container">
+      <h1>My work</h1>
+      <h3>Projects</h3>
+      <div class="work__categories">
+        <button class="category__btn selected" data-filter="*">
+          All <span class="category__count">8</span>
+        </button>
+        <button class="category__btn" data-filter="Responsive Web">
+          Responsive Web <span class="category__count">1</span>
+        </button>
+        <button class="category__btn" data-filter="Web standard">
+         Web standard<span class="category__count">2</span>
+        </button>
+        <button class="category__btn" data-filter="Graphic">
+          Graphic & Uiux<span class="category__count">5</span>
+        </button>  
+      </div>
+      <div class="work__projects">
+        <a href="https://dahee0401.github.io/kakao/" class="project" target="blank" data-type="Responsive Web">
+          <img src="images/kakao.png" alt="Kakao" class="project__img"/>
+          <div class="project__description">
+            <h3>Kakao reponsive site</h3>
+            <span>Clone coding with HTML, CSS, JS</span>
+          </div>
+        </a>
+          <a href="https://dahee0401.github.io/sampyo/" class="project" target="blank" data-type="Web Standard">
+          <img src="images/sampyo.png" alt="Sampyo" class="project__img"/>
+          <div class="project__description">
+            <h3>Sampyo Web Standard</h3>
+            <span>Clone coding with HTML, CSS, JS</span>
+          </div>
+        </a>
+          <a href="https://dahee0401.github.io/ppaikdabang/" class="project" target="blank" data-type="Web Standard">
+          <img src="images/ppaik.png" alt="ppaik" class="project__img"/>
+          <div class="project__description">
+            <h3>PPAIK'S Web Standard</h3>
+            <span>Clone coding with HTML, CSS, JS</span>
+          </div>
+        </a>
+      </div>
+     </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="section">
+   <div class="section__container">
+    <h1>Testimonials</h1>
+    <h3>See what they say about me</h3>
+    <div class="testimonials">
+      <div class="testimonial">
+        <img src="images/testimonial/people1.jpg" alt="People" class="testimonial__avatar" />
+        <div class="testimonial__speech-bubble">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque
+            fuga libero nulla eveniet aperiam laborum, quis provident
+            quibusdam officiis reprehenderit, placeat neque perspiciatis vero
+            explicabo tempora, dignissimos accusantium inventore ducimus!
+          </p>
+          <p class="name"><a href="">Dahee</a> / Samsung</p>
+        </div>
+      </div>
+      <div class="testimonial">
+        <div class="testimonial__speech-bubble">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque
+            fuga libero nulla eveniet aperiam laborum, quis provident
+            quibusdam officiis reprehenderit, placeat neque perspiciatis vero
+            explicabo tempora, dignissimos accusantium inventore ducimus!
+          </p>
+          <p class="name"><a href="">Dahee</a> / Samsung</p>
+        </div>
+        <img src="images/testimonial/people1.jpg" alt="People" class="testimonial__avatar" />
+      </div>
     </div>
-  </nav>
-  <!-- About -->
-  <section id="about"></section>
-  <!-- Skills -->
-  <section id="skills"></section>
-  <!-- Work -->
-  <section id="work"></section>
-  <!-- Testmonials-->
-  <section id="testmonials"></section>
-  <!-- Contact -->
-  <section id="contact"></section>
-</body>
+   </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section">
+      <h1 class="contact__title">Let's talk</h1>
+      <h2 class="contact__email">ekgml5233@gmail.com</h2>
+      <div class="contact__links">
+        <a href="https://github.com/dahee0401" target="_blank">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="#" target="_blank">
+          <i class="fa fa-linkedin-square"></i>
+        </a>
+      </div>
+      <p class="contact__rights">
+        2022 Dahee - All rights reserved
+      </p>
+    </section>
+
+    <!-- Arrow up -->
+    <button class="arrow-up">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+  </body>
 </html>
