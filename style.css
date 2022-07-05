@@ -4,14 +4,16 @@
 	/* Color */
 	--color-white: #fff;
 	--color-light-white: #eee;
-	--color-dark-white: #eee;
+	--color-dark-white: #bdbdbd;
+	--color-pink: #fdbfd6;
+	--color-dark-pink: #ffabca;
+	--color-purple: #b7a8de;
+	--color-orange: #feb546;
+	--color-blue: #73aace;
 	--color-grey: #616161;
 	--color-light-grey: #7c7979;
 	--color-dark-grey: #4d4d4d;
 	--color-black: #000;
-	--color-pink: #f9bdd5;
-	--color-purple: #baa7dd;
-	--color-blue: #b8d4fb;
 
 	/* Font size */
 	--font-large: 48px;
@@ -120,7 +122,7 @@ p {
 }
 
 .navbar__menu__item:hover {
-	background-color: var(--color-purple);
+	background-color: var(--color-dark-pink);
 }
 
 /* Home */
@@ -156,8 +158,11 @@ p {
 .section {
 	padding: 50px;
 	text-align: center;
-	max-width: 1200px;
 	margin: auto;
+}
+.section__container {
+	margin: auto;
+	max-width: 1200px;
 }
 
 /* About*/
@@ -213,4 +218,55 @@ p {
 
 .job__period {
 	font-size: var(--font-micro);
+}
+
+/* Skill */
+#skills {
+	/* background-color: var(--color-purple); */
+}
+
+.skillset {
+	display: flex;
+	background-color: var(--color-light-grey);
+	color: var(--color-light-white);
+	margin: 20px 0;
+}
+
+.skillset__title {
+	color: var(--color-white);
+}
+.skillset__left {
+	flex-basis: 60%;
+	background-color: var(--color-dark-grey);
+	padding: 20px 40px;
+}
+.skill {
+	margin-bottom: 32px;
+}
+.skill__description {
+	display: flex;
+	justify-content: space-between;
+}
+
+.skill__bar {
+	width: 100%;
+	height: 3px;
+	background-color: var(--color-grey);
+}
+
+.skill__value {
+	height: 3px;
+	background-color: var(--color-purple);
+}
+.skillset__right {
+	flex-basis: 40%;
+	background-color: var(--color-grey-grey);
+}
+
+.tools {
+	background-color: var(--color-grey);
+}
+.tools,
+.etc {
+	padding: 20px;
 }
