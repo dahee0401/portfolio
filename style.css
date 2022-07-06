@@ -84,6 +84,11 @@ h3 {
 	margin: 8px 0;
 }
 
+h4 {
+	color: var(--color-white);
+	font-size: var(--font-regular);
+}
+
 p {
 	font-size: var(--font-regular);
 	font-weight: var(--weight-regular);
@@ -125,6 +130,14 @@ p {
 	background-color: var(--color-dark-pink);
 }
 
+.navbar__toggle-btn {
+	display: none;
+	position: absolute;
+	right: 32px;
+	top: 24px;
+	font-size: 24px;
+	color: var(--color-white);
+}
 /* Home */
 #home {
 	background: url('./images/home-background.png') center/ cover no-repeat;
@@ -221,10 +234,6 @@ p {
 }
 
 /* Skill */
-#skills {
-	/* background-color: var(--color-purple); */
-}
-
 .skillset {
 	display: flex;
 	background-color: var(--color-light-grey);
@@ -366,18 +375,19 @@ p {
 
 /* Multi */
 .multi__container {
-	position: relative;
-	width: 1200px;
-	height: 630px;
-	margin: 260px auto 0;
+	margin: auto;
+	max-width: 1200px;
 }
 
 .multi__lists {
 	display: flex;
+	flex-wrap: wrap;
 	justify-content: space-between;
 }
 
 .multi__lists li {
+	justify-content: center;
+	align-items: center;
 	position: relative;
 	width: 320px;
 	height: 420px;
@@ -385,14 +395,18 @@ p {
 	background-color: var(--color-white);
 	overflow: hidden;
 	cursor: pointer;
+	margin: 2px;
 }
 
 .multi__lists li img {
-	position: absolute;
-	left: 0;
-	top: 0;
 	display: block;
 	width: 100%;
+	position: absolute;
+	left: 50%;
+	margin-left: -160px;
+	top: 0;
+	max-width: 100%;
+	max-height: 100%;
 }
 
 .list1:hover h1 {
@@ -414,17 +428,16 @@ p {
 
 .list1:hover .screen::before {
 	opacity: 1;
-	-webkit-transform: translate3d(0, -62%, 0);
-	transform: translate3d(0, -62%, 0);
+	-webkit-transform: translate3d(0, -100%, 0);
+	transform: translate3d(0, -100%, 0);
 }
 
 .screen {
-	color: var(--color-white);
 	height: 100%;
 }
 .list1 .screen:before {
 	position: absolute;
-	top: 0;
+	top: 420px;
 	left: 0;
 	width: 320px;
 	height: 420px;
@@ -447,42 +460,30 @@ p {
 	content: '';
 }
 
-.list1 .screen h1 {
+.list1 .screen h4 {
 	position: absolute;
 	width: 320px;
 	left: 0;
-	top: 110px;
-	font-size: 25px;
-	font-family: 'Roboto', sans-serif;
+	top: 360px;
 	z-index: 10;
-	-webkit-transition: color 0.35s, -webkit-transform 0.35s;
-	transition: color 0.35s, -webkit-transform 0.35s;
-	transition: transform 0.35s, color 0.35s;
-	transition: transform 0.35s, color 0.35s, -webkit-transform 0.35s;
+	color: var(--color-white);
+	transition: transform 0.35s, all 0.35s;
+	transition: transform 0.35s, all 0.35s, -webkit-transform 0.35s;
 }
 
-.screen h1:after {
-	position: absolute;
-	width: 100px;
-	height: 2px;
-	left: 50%;
-	margin-left: -50px;
-	top: 70px;
-	background-color: var(--color-white);
-	opacity: 0.5;
-	content: '';
+.list1:hover h4 {
+	top: 30px;
 }
 
-.list1 .screen span {
+.list1 .screen span,
+.screen p {
 	position: absolute;
 	width: 320px;
 	left: 0;
-	top: 160px;
+	top: 420px;
 	margin-top: 10px;
-	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
-	transition: opacity 0.35s, -webkit-transform 0.35s;
-	transition: transform 0.35s, opacity 0.35s;
-	transition: transform 0.35s, opacity 0.35s, -webkit-transform 0.35s;
+	transition: transform 0.35s, all 0.35s;
+	transition: transform 0.35s, all 0.35s, -webkit-transform 0.35s;
 	z-index: 10;
 	color: #fff;
 	font-weight: 300;
@@ -494,17 +495,13 @@ p {
 	line-height: 1.5;
 }
 
-.screen span {
-	padding-top: 6px;
-}
-
-ul .list1 .screen h1:after {
+ul .list1 .screen h4:after {
 	position: absolute;
 	width: 100px;
 	height: 2px;
 	left: 50%;
 	margin-left: -50px;
-	top: 70px;
+	top: 50px;
 	background-color: var(--color-white);
 	opacity: 0.5;
 	content: '';
@@ -516,10 +513,8 @@ ul .list1 .screen h1:after {
 	top: 50%;
 	margin-top: -12px;
 	z-index: 10;
-	font-size: var(--font-medium);
 	transition: all 0.5s;
 }
-.list2 h4,
 .list2 p {
 	color: var(--color-white);
 }
@@ -603,7 +598,7 @@ ul .list1 .screen h1:after {
 }
 
 .list2 ol li:nth-of-type(1) {
-	width: 280px;
+	width: 276px;
 	height: 2px;
 	left: 20px;
 	top: 20px;
@@ -611,13 +606,13 @@ ul .list1 .screen h1:after {
 
 .list2 ol li:nth-of-type(2) {
 	width: 2px;
-	height: 380px;
+	height: 376px;
 	right: 20px;
 	top: 20px;
 }
 
 .list2 ol li:nth-of-type(3) {
-	width: 280px;
+	width: 276px;
 	height: 2px;
 	right: 20px;
 	bottom: 20px;
@@ -625,7 +620,7 @@ ul .list1 .screen h1:after {
 
 .list2 ol li:nth-of-type(4) {
 	width: 2px;
-	height: 380px;
+	height: 376px;
 	left: 20px;
 	bottom: 20px;
 }
@@ -646,7 +641,7 @@ ul .list1 .screen h1:after {
 .list3:hover img {
 	opacity: 0.8;
 }
-.list3:hover h1 {
+.list3:hover h4 {
 	top: 80px;
 }
 
@@ -654,12 +649,8 @@ ul .list1 .screen h1:after {
 	top: 140px;
 }
 
-.list3:hover ol > li {
-	top: 120px;
-}
-
 .list3:hover div {
-	top: 100px;
+	top: 360px;
 }
 
 .list3 h4 {
@@ -670,40 +661,39 @@ ul .list1 .screen h1:after {
 	-webkit-transition: all 0.3s;
 	transition: all 0.3s;
 }
+.list3 p {
+	position: absolute;
+	top: 160px;
+	left: 30px;
+	z-index: 2;
+	color: rgba(255, 255, 255, 0.8);
+	-webkit-transition: all 0.3s;
+	transition: all 0.3s;
+}
 
-.list3 ol li:nth-of-type(1) {
+.icons i:nth-of-type(1) {
 	left: 0;
 	-webkit-transition: all 0.3s 0.1s;
 	transition: all 0.3s 0.1s;
 }
 
-.list3 ol li:nth-of-type(2) {
+.icons i:nth-of-type(2) {
 	left: 45px;
 	-webkit-transition: all 0.3s 0.2s;
 	transition: all 0.3s 0.2s;
 }
 
-.list3 ol li:nth-of-type(3) {
+.icons i:nth-of-type(3) {
 	left: 90px;
 	-webkit-transition: all 0.3s 0.3s;
 	transition: all 0.3s 0.3s;
-}
-
-.list3 ol li i {
-	display: block;
-	width: 22px;
-	height: 22px;
-}
-
-.list3 ol li .material-icons.md-light {
-	color: white;
 }
 
 .list3 div {
 	position: absolute;
 	width: 320px;
 	height: 60px;
-	top: 160px;
+	top: 420px;
 	left: 0;
 	z-index: 10;
 	background-color: rgba(0, 0, 0, 0.5);
@@ -718,13 +708,7 @@ ul .list1 .screen h1:after {
 	-webkit-transition: all 0.3s 0s;
 	transition: all 0.3s 0s;
 }
-
-.list3 ol li {
-	position: absolute;
-	top: 200px;
-}
-
-.list3 ol {
+.list3 .icons {
 	position: absolute;
 	top: 256px;
 	right: 20px;
@@ -734,17 +718,17 @@ ul .list1 .screen h1:after {
 	font-size: 20px;
 	color: rgba(255, 255, 255, 0.5);
 }
-
-.list3 p {
+.list3 .icons i {
+	display: block;
 	position: absolute;
-	top: 160px;
-	left: 30px;
-	z-index: 2;
-	font-size: 14px;
-	color: rgba(255, 255, 255, 0.8);
-	font-family: 'Roboto', sans-serif;
-	-webkit-transition: all 0.3s;
-	transition: all 0.3s;
+	top: 200px;
+	color: var(--color-white);
+	width: 22px;
+	height: 22px;
+}
+
+.list3:hover .icons i {
+	top: 120px;
 }
 /* Contact */
 #contact {
@@ -771,4 +755,42 @@ ul .list1 .screen h1:after {
 .contact__links i:hover {
 	transform: scale(1.1);
 	color: var(--color-blue);
+}
+
+/* for below 768px screen width */
+@media screen and (max-width: 768px) {
+	.navbar__toggle-btn {
+		display: block;
+	}
+	#navbar {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+	.navbar__menu {
+		flex-direction: column;
+		text-align: center;
+		width: 100%;
+		display: none;
+	}
+
+	.about__majors {
+		flex-direction: column;
+	}
+
+	.major {
+		margin-bottom: 38px;
+	}
+
+	.skillset {
+		flex-direction: column;
+	}
+
+	.project {
+		flex-grow: 1;
+	}
+
+	.multi__lists {
+		flex-direction: column;
+		flex-grow: 1;
+	}
 }
