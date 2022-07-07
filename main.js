@@ -40,11 +40,22 @@ document.addEventListener('scroll', () => {
 	home.style.opacity = 1 - window.scrollY / homeHeight
 })
 
-// Navbar toggle button for small screen
-
 // Show "arrow up" button when scrolling down
+const arrowUp = document.querySelector('.arrow-up')
+document.addEventListener('scroll', () => {
+	if (window.scrollY > homeHeight / 2) {
+		arrowUp.classList.add('visible')
+	} else {
+		arrowUp.classList.remove('visible')
+	}
+})
 
 // Handle click on the "arrow up" button
+document.addEventListener('click', () => {
+	scrollIntoView('#home')
+})
+
+// Navbar toggle button for small screen
 
 // Projects
 
