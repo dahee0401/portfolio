@@ -32,6 +32,14 @@ function scrollIntoView(selector) {
 	const scrollTo = document.querySelector(selector)
 	scrollTo.scrollIntoView({ behavior: 'smooth' })
 }
+
+// Make home slowly fade to transparent as the window scrollls down
+const home = document.querySelector('.home__container')
+const homeHeight = home.getBoundingClientRect().height
+document.addEventListener('scroll', () => {
+	home.style.opacity = 1 - window.scrollY / homeHeight
+})
+
 // Navbar toggle button for small screen
 
 // Show "arrow up" button when scrolling down
