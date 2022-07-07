@@ -19,15 +19,20 @@ navbarMenu.addEventListener('click', (event) => {
 	if (link == null) {
 		return
 	}
-
-	console.log(event.target.dataset.link)
-	const scrollTo = document.querySelector(link)
-	scrollTo.scrollIntoView({ behavior: 'smooth', block: 'end', inline: 'nearest' })
+	scrollIntoView(link)
 })
 
-// Navbar toggle button for small screen
-
 // Handle click on "contact me" button on home
+const homeContactBTN = document.querySelector('.home__contact')
+homeContactBTN.addEventListener('click', () => {
+	scrollIntoView('#contact')
+})
+
+function scrollIntoView(selector) {
+	const scrollTo = document.querySelector(selector)
+	scrollTo.scrollIntoView({ behavior: 'smooth' })
+}
+// Navbar toggle button for small screen
 
 // Show "arrow up" button when scrolling down
 
