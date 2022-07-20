@@ -296,6 +296,7 @@ p {
 	border-radius: var(--size-border-radius);
 	font-size: var(--font-regular);
 	padding: 8px 48px;
+	position: relative;
 }
 .category__btn.selected,
 .category__btn:hover {
@@ -316,11 +317,11 @@ p {
 	width: 24px;
 	height: 24px;
 	line-height: 24px;
-	position: relative;
 	top: -20px;
-	left: 4px;
+	right: 16px;
 	opacity: 0;
 	transition: all var(--animation-duration) ease-in;
+	position: absolute;
 }
 
 .work__projects {
@@ -783,12 +784,13 @@ ul .list1 .screen h4:after {
 	width: 70px;
 	height: 70px;
 	font-size: 50px;
-	background-color: var(--color-pink);
+	background-color: var(--color-blue);
 	color: var(--color-white);
 	border-radius: 50%;
 	opacity: 0;
 	transition: opacity 300ms ease-in;
 	pointer-events: none;
+	z-index: 100;
 }
 
 .arrow-up.visible {
@@ -798,8 +800,24 @@ ul .list1 .screen h4:after {
 
 /* for below 768px screen width */
 @media screen and (max-width: 768px) {
+	:root {
+		/* Font size */
+		--font-large: 30px;
+		--font-medium: 18px;
+		--font-regular: 16px;
+		--font-small: 14px;
+		--font-micro: 12px;
+	}
 	.navbar__toggle-btn {
 		display: block;
+		top: 16px;
+		right: 16px;
+		font-size: var(--font-medium);
+	}
+
+	.section {
+		padding: 16px;
+		padding-top: 40px;
 	}
 	#navbar {
 		flex-direction: column;
@@ -821,22 +839,38 @@ ul .list1 .screen h4:after {
 	}
 	.about__majors {
 		flex-direction: column;
+		margin-top: 30px;
+		margin-bottom: 0px;
 	}
 
 	.major {
-		margin-bottom: 38px;
+		margin-bottom: 30px;
 	}
 
 	.skillset {
 		flex-direction: column;
 	}
 
+	.category__btn {
+		margin: 4px 0;
+		width: 100%;
+	}
 	.project {
 		flex-grow: 1;
 	}
 
 	.multi__lists {
 		flex-direction: column;
+		align-items: center;
 		flex-grow: 1;
+	}
+
+	.arrow-up {
+		width: 50px;
+		height: 50px;
+		font-size: 30px;
+		line-height: 50px;
+		right: 16px;
+		bottom: 16px;
 	}
 }
