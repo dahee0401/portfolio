@@ -11,6 +11,12 @@ document.addEventListener('scroll', () => {
 	}
 })
 
+// Navbar toggle button for small screen
+const navbarToglleBtn = document.querySelector('.navbar__toggle-btn')
+navbarToglleBtn.addEventListener('click', () => {
+	navbarMenu.classList.toggle('open')
+})
+
 // Handle scrolling when tapping on the navbar menu
 const navbarMenu = document.querySelector('.navbar__menu')
 navbarMenu.addEventListener('click', (event) => {
@@ -19,6 +25,7 @@ navbarMenu.addEventListener('click', (event) => {
 	if (link == null) {
 		return
 	}
+	navbarMenu.classList.remove('open')
 	scrollIntoView(link)
 })
 
@@ -66,9 +73,9 @@ workBtnContainer.addEventListener('click', (e) => {
 	}
 	// Remove selection from the previous item and select the new one
 	const active = document.querySelector('.category__btn.selected')
-	const target = e.target.nodeName === 'BUTTON' ? e.target : e.target.parentNode
-
-	target.classList.remove('selected')
+	if (active != null) {
+		active.classList.remove('selected')
+	}
 	e.target.classList.add('selected')
 
 	projectContainer.classList.add('anim-out')
@@ -84,5 +91,3 @@ workBtnContainer.addEventListener('click', (e) => {
 		projectContainer.classList.remove('anim-out')
 	}, 300)
 })
-
-// Navbar toggle button for small screen
