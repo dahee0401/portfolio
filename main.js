@@ -1,4 +1,39 @@
 'use strict'
+// typing effect
+let cursorTarget = document.querySelector('#dynamic')
+
+function randomString() {
+	let stringArr = ["I'm Web Publisher Dahee"]
+	let selectString = stringArr[Math.floor(Math.random() * stringArr.length)]
+	let selectStringArr = selectString.split('')
+
+	return selectStringArr
+}
+
+// 타이핑 리셋
+function resetTyping() {
+	cursorTarget.textContent = ''
+	dynamic(randomString())
+}
+
+// 한글자씩 텍스트 출력 함수
+function dynamic(randomArr) {
+	if (randomArr.length > 0) {
+		cursorTarget.textContent += randomArr.shift()
+		setTimeout(function () {
+			dynamic(randomArr)
+		}, 80)
+	} else {
+		setTimeout(resetTyping, 3000)
+	}
+}
+dynamic(randomString())
+
+// 커서깜빡임
+function blink() {
+	cursorTarget.classList.toggle('active')
+}
+setInterval(blink, 500)
 
 // Make navbar transparent when it is on the top
 const navbar = document.querySelector('#navbar')
