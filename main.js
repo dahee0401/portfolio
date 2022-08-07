@@ -3,7 +3,7 @@
 let cursorTarget = document.querySelector('#dynamic')
 
 function randomString() {
-	let stringArr = ["I'm Web Publisher Dahee"]
+	let stringArr = ['Welcome to my Portfolio:)']
 	let selectString = stringArr[Math.floor(Math.random() * stringArr.length)]
 	let selectStringArr = selectString.split('')
 
@@ -48,8 +48,13 @@ document.addEventListener('scroll', () => {
 
 // Navbar toggle button for small screen
 const navbarToglleBtn = document.querySelector('.navbar__toggle-btn')
-navbarToglleBtn.addEventListener('click', () => {
+const Bars = document.querySelectorAll('.bar')
+navbarToglleBtn.addEventListener('click', (event) => {
+	event.preventDefault()
 	navbarMenu.classList.toggle('open')
+	Bars.forEach((bar) => {
+		bar.classList.toggle('togOn')
+	})
 })
 
 // Handle scrolling when tapping on the navbar menu
@@ -60,8 +65,11 @@ navbarMenu.addEventListener('click', (event) => {
 	if (link == null) {
 		return
 	}
-	navbarMenu.classList.remove('open')
 	scrollIntoView(link)
+	Bars.forEach((bar) => {
+		bar.classList.remove('togOn')
+	})
+	navbarMenu.classList.remove('open')
 })
 
 // Handle click on "contact me" button on home
@@ -87,11 +95,14 @@ document.addEventListener('scroll', () => {
 	}
 })
 
-// Handle click on the "arrow up" button
+// Handle click on the "arrow up" button, logo
 arrowUp.addEventListener('click', () => {
 	scrollIntoView('#home')
 })
-
+const logo = document.querySelector('.logo')
+logo.addEventListener('click', () => {
+	scrollIntoView('#home')
+})
 // Projects
 const workBtnContainer = document.querySelector('.work__categories')
 const projectContainer = document.querySelector('.work__projects')
@@ -111,7 +122,7 @@ workBtnContainer.addEventListener('click', (e) => {
 	projectContainer.classList.add('anim-out')
 	setTimeout(() => {
 		projects.forEach((project) => {
-			console.log(project.dataset.type)
+			// console.log(project.dataset.type)
 			if (filter === '*' || filter === project.dataset.type) {
 				project.classList.remove('invisible')
 			} else {
@@ -125,7 +136,7 @@ workBtnContainer.addEventListener('click', (e) => {
 // 1. 모든 섹션 요소들과 메뉴아이템들을 가지고 온다
 // 2. IntersectionObserver를 이용해서 모든 섹션들을 관찰한다
 // 3. 보여지는 섹션에 해당하는 메뉴 아이템을 활성화 시킨다
-const sectionIds = ['#home', '#about', '#skills', '#work', '#multi', '#contact']
+const sectionIds = ['#home', '#about', '#skills', '#work', '#design', '#multi', '#contact']
 const sections = sectionIds.map((id) => document.querySelector(id))
 const navItems = sectionIds.map((id) => document.querySelector(`[data-link="${id}"]`))
 
@@ -150,7 +161,7 @@ const observerOptions = {
 const observerCallback = (entries, observer) => {
 	entries.forEach((entry) => {
 		if (!entry.isIntersecting && entry.intersectionRatio > 0) {
-			console.log('y')
+			// console.log('y')
 			const index = sectionIds.indexOf(`#${entry.target.id}`)
 			// 스크롤링이 아래로 되어서 페이지가 올라옴
 			if (entry.boundingClientRect.y < 0) {
@@ -161,7 +172,21 @@ const observerCallback = (entries, observer) => {
 		}
 	})
 }
-
+// 스킬바
+const skillBar = document.querySelectorAll('.skill__value')
+window.addEventListener('scroll', () => {
+	// console.log(window.scrollY)
+	const scrollItems = sectionIds.map((id) => document.querySelector(`[data-link="${id}"]`))
+	if (window.scrollY >= 1900) {
+		skillBar.forEach((bar) => {
+			bar.classList.add('skillOn')
+		})
+	} else {
+		skillBar.forEach((bar) => {
+			bar.classList.remove('skillOn')
+		})
+	}
+})
 const observer = new IntersectionObserver(observerCallback, observerOptions)
 sections.forEach((section) => observer.observe(section))
 
@@ -174,12 +199,92 @@ window.addEventListener('wheel', () => {
 	selectNavItem(navItems[selectedNavIndex])
 })
 
-// 스크롤링 마우스 휠 숨기기
-const mouseWheel = document.querySelector('.mouseicon')
-document.addEventListener('scroll', () => {
-	if (window.scrollY + window.innerHeight === document.body.clientHeight) {
-		mouseWheel.classList.add('mouseHidden')
-	} else {
-		mouseWheel.classList.remove('mouseHidden')
+// desin
+const overlay = document.querySelector('#overlay')
+const bigPhoto = document.querySelectorAll('.gallery__big_photo')
+const thumbnails = document.querySelectorAll('.gallery__thumbnail')
+const body = document.querySelector('body')
+const thumb1 = document.querySelector('.thumb1')
+const thumb2 = document.querySelector('.thumb2')
+const thumb3 = document.querySelector('.thumb3')
+const thumb4 = document.querySelector('.thumb4')
+const thumb5 = document.querySelector('.thumb5')
+
+thumb1.addEventListener('click', (e) => {
+	e.preventDefault()
+	body.classList.add('scroll_hidden')
+	overlay.style.display = 'block'
+	// 썸네일 원본 사진 링크와 갤러리 슬라이드 이미지 소스 링크 연결
+	for (let i = 0; i < thumbnails.length; i++) {
+		let photo = thumbnails[0].lastElementChild
+		bigPhoto[i].src = photo.href
+		document.querySelector('button.close').addEventListener('click', () => {
+			overlay.style.display = 'none'
+			body.classList.remove('scroll_hidden')
+		})
 	}
 })
+thumb2.addEventListener('click', (e) => {
+	e.preventDefault()
+	body.classList.add('scroll_hidden')
+	overlay.style.display = 'block'
+	// 썸네일 원본 사진 링크와 갤러리 슬라이드 이미지 소스 링크 연결
+	for (let i = 0; i < thumbnails.length; i++) {
+		let photo = thumbnails[1].lastElementChild
+		bigPhoto[i].src = photo.href
+		document.querySelector('button.close').addEventListener('click', () => {
+			overlay.style.display = 'none'
+			body.classList.remove('scroll_hidden')
+		})
+	}
+})
+thumb3.addEventListener('click', (e) => {
+	e.preventDefault()
+	body.classList.add('scroll_hidden')
+	overlay.style.display = 'block'
+	// 썸네일 원본 사진 링크와 갤러리 슬라이드 이미지 소스 링크 연결
+	for (let i = 0; i < thumbnails.length; i++) {
+		let photo = thumbnails[2].lastElementChild
+		bigPhoto[i].src = photo.href
+		document.querySelector('button.close').addEventListener('click', () => {
+			overlay.style.display = 'none'
+			body.classList.remove('scroll_hidden')
+		})
+	}
+})
+thumb4.addEventListener('click', (e) => {
+	e.preventDefault()
+	body.classList.add('scroll_hidden')
+	overlay.style.display = 'block'
+	// 썸네일 원본 사진 링크와 갤러리 슬라이드 이미지 소스 링크 연결
+	for (let i = 0; i < thumbnails.length; i++) {
+		let photo = thumbnails[3].lastElementChild
+		bigPhoto[i].src = photo.href
+		document.querySelector('button.close').addEventListener('click', () => {
+			overlay.style.display = 'none'
+			body.classList.remove('scroll_hidden')
+		})
+	}
+})
+thumb5.addEventListener('click', (e) => {
+	e.preventDefault()
+	body.classList.add('scroll_hidden')
+	overlay.style.display = 'block'
+	// 썸네일 원본 사진 링크와 갤러리 슬라이드 이미지 소스 링크 연결
+	for (let i = 0; i < thumbnails.length; i++) {
+		let photo = thumbnails[4].lastElementChild
+		bigPhoto[i].src = photo.href
+		document.querySelector('button.close').addEventListener('click', () => {
+			overlay.style.display = 'none'
+			body.classList.remove('scroll_hidden')
+		})
+	}
+})
+// 갤러리 바닐라 틸트
+VanillaTilt.init(document.querySelectorAll('.gallery__thumbnail')),
+	{
+		max: 25,
+		speed: 400,
+		glare: true,
+		'max-glare': 1,
+	}
