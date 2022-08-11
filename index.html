@@ -263,14 +263,14 @@
             <span>Clone coding with HTML, CSS, JS</span>
           </div>
         </a>
-        <a href="https://dahee0401.github.io/kakao/" class="project" target="_blank" data-type="standard">
+        <a href="https://dahee0401.github.io/kakao/" class="project" target="blank" data-type="standard">
           <img src="images/kakao.png" alt="Kakao" class="project__img" />
           <div class="project__description">
             <h3>Kakao reponsive site</h3>
             <span>Clone coding with HTML, SCSS, JS</span>
           </div>
         </a>
-        <a href="https://dahee0401.github.io/kakao/" class="project mob_project" target="_blank" data-type="standard"
+        <a href="https://dahee0401.github.io/kakao/" class="project mob_project" target="blank" data-type="standard"
           onclick="opop()">
           <img src="images/kakao-mobile.png" alt="Kakao" class="project__img" />
           <div class="project__description">
@@ -287,11 +287,7 @@
         </a>
       </div>
     </div>
-    <script type="text/javascript">
-      function opop() {
-        window.open('https://dahee0401.github.io/kakao/', 'aa', 'width=480px, height=800px', 'top:100px', 'left:100px');
-      }
-    </script>
+
   </section>
   <!-- design -->
   <section id="design" class="section">
@@ -445,6 +441,11 @@
   <button class="arrow-up">
     <i class="fas fa-arrow-up"></i>
   </button>
+  <script type="text/javascript">
+    function opop() {
+      window.open('https://dahee0401.github.io/kakao/', 'aa', 'width=480px, height=800px', 'top:100px', 'left:100px', 'resizable=no');
+    }
+  </script>
   <script>
     ScrollOut({});
   </script>
