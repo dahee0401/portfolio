@@ -1415,7 +1415,9 @@ ul .list1 .screen h4:after {
 		width: 30rem;
 	}
 	.gallery__big_photo {
-		width: 30rem;
+		-webkit-transform: translateX(25%);
+		transform: translateX(25%);
+		width: 20rem;
 	}
 	.multi__lists {
 		flex-direction: column;
