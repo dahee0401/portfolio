@@ -1431,6 +1431,6 @@ ul .list1 .screen h4:after {
 		bottom: 16px;
 	}
 	.mouseicon {
-		bottom: 3%;
+		display: none;
 	}
 }
