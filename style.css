@@ -656,6 +656,10 @@ p {
 	max-width: 100%;
 	max-height: 100%;
 }
+.mob_project .project__img {
+	max-width: 90%;
+	max-height: 90%;
+}
 
 .project__description {
 	position: absolute;
@@ -677,7 +681,8 @@ p {
 }
 
 .project__description h3 {
-	color: var(--color-pink);
+	color: var(--color-dark-pink);
+	font-weight: var(--weight-semi-bold);
 }
 
 .project__description h3:after {
@@ -760,7 +765,9 @@ p {
 .gallery__thumbnail_content > h3 {
 	line-height: 2;
 	margin-bottom: 0.2em;
+	font-size: var(--font-regular);
 	color: var(--color-dark-pink);
+	font-weight: var(--weight-semi-bold);
 }
 .gallery__thumbnail_content > h3:after {
 	position: relative;
@@ -769,8 +776,8 @@ p {
 	margin-top: 2px;
 	display: block;
 	width: 50px;
-	height: 2px;
-	background-color: var(--color-dark-pink);
+	height: 1.5px;
+	background-color: var(--color-black);
 	content: '';
 }
 
@@ -840,7 +847,7 @@ button.close:hover {
 	margin-top: 30px;
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-between;
+	justify-content: center;
 }
 
 .multi__lists li {
